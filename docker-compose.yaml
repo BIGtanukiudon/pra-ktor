@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  pra-ktor-db:
+    image: postgres:9-alpine
+    environment:
+      POSTGRES_PASSWORD: praktor
+      POSTGRES_USER: praktor
+      POSTGRES_DB: praktor
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - ./psql/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
